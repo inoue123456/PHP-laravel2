@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -15,6 +16,14 @@ class ProfileController extends Controller
     
     public function create(Request $request)
     {
+        $this->validate($request, Profile::$rules);
+        
+        $profile = new Profile;
+        $form = $request->all();
+        
+        $profile->fill($form);
+        $profile->save();
+        
         return redirect('admin/profile/create');
     }
     
