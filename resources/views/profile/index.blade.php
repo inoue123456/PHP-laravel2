@@ -21,7 +21,7 @@
                                 <div class="hobby">
                                     {{ \Str::limit($post->hobby, 150) }}
                                 </div>
-                                <div class="introduction mt-3">
+                                <div class="introduction mt-4">
                                     {{ \Str::limit($post->introduction, 1500) }}
                                 </div>
                             </div>
